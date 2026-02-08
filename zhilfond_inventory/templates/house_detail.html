@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>{{ house.address }}</h4>
+
+<p>Год: {{ house.year_built }}</p>
+<p>Этажность: {{ house.floors }}</p>
+
+<h5>Квартиры</h5>
+<ul class="list-group">
+{% for apt in apartments %}
+<li class="list-group-item">
+Кв. {{ apt.number }}
+<a href="/apartment/{{ apt.id }}/create-act/">Создать акт</a>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

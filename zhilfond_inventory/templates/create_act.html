@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>Акт — кв. {{ apartment.number }}</h4>
+
+<form method="post">
+{% csrf_token %}
+
+<label>Техническое состояние</label>
+<textarea name="technical_condition" class="form-control"></textarea>
+
+<label>Замечания</label>
+<textarea name="remarks" class="form-control"></textarea>
+
+<label>Заключение</label>
+<textarea name="conclusion" class="form-control"></textarea>
+
+<button class="btn btn-primary mt-3">Сохранить акт</button>
+</form>
+{% endblock %}
