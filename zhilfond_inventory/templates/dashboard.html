@@ -1,5 +1,62 @@
 {% extends "base.html" %}
 {% block content %}
-<h4>Панель управления</h4>
-<a class="btn btn-primary" href="/houses/">Перейти к домам</a>
+
+<h4 class="mb-3">Система инвентаризации жилого фонда</h4>
+
+<div class="row g-3">
+
+    <div class="col-6 col-md-4">
+        <div class="card shadow-sm text-center p-3">
+            <h6>Дома</h6>
+            <h3>{{ houses_count }}</h3>
+            <a href="/houses/" class="btn btn-outline-primary btn-sm mt-2">Открыть</a>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-4">
+        <div class="card shadow-sm text-center p-3">
+            <h6>Квартиры</h6>
+            <h3>{{ apartments_count }}</h3>
+            <a href="/apartments/" class="btn btn-outline-primary btn-sm mt-2">Открыть</a>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-4">
+        <div class="card shadow-sm text-center p-3">
+            <h6>Акты</h6>
+            <h3>{{ acts_count }}</h3>
+            <a href="/acts/" class="btn btn-outline-primary btn-sm mt-2">Открыть</a>
+        </div>
+    </div>
+
+</div>
+
+<hr class="my-4">
+
+<div class="row g-3">
+
+    <div class="col-md-6">
+        <div class="card shadow-sm p-3">
+            <h6>Быстрые действия</h6>
+            <div class="d-grid gap-2 mt-2">
+                <a href="/houses/" class="btn btn-primary">Выбрать дом</a>
+                <a href="/apartments/" class="btn btn-outline-primary">Найти квартиру</a>
+                <a href="/commission/" class="btn btn-outline-secondary">Комиссия</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow-sm p-3">
+            <h6>Назначение системы</h6>
+            <p class="small text-muted mt-2">
+                Онлайн-система инвентаризации квартир и изолированных жилых домов
+                по форме ЖКХ Республики Беларусь.
+                Предназначена для работы комиссии и сотрудников отдела жилфонда.
+            </p>
+        </div>
+    </div>
+
+</div>
+
 {% endblock %}

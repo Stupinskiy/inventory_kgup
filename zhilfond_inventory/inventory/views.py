@@ -6,7 +6,19 @@ from .models import Apartment, House, InventoryAct
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    houses_count = House.objects.count()
+    apartments_count = Apartment.objects.count()
+    acts_count = InventoryAct.objects.count()
+
+    return render(
+        request,
+        'dashboard.html',
+        {
+            'houses_count': houses_count,
+            'apartments_count': apartments_count,
+            'acts_count': acts_count,
+        },
+    )
 
 
 def houses_list(request):
